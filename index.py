@@ -9,9 +9,6 @@ socketio = SocketIO(app, async_mode=async_mode)
 thread = None
 thread_lock = Lock()
  
-PORT = os.environ["PORT"]
-serverIP = "0.0.0.0"
- 
 @app.route('/')
 def index():
     return render_template('index.html', async_mode=socketio.async_mode)
@@ -43,5 +40,5 @@ def disconnect_request():
          callback=can_disconnect)
  
 if __name__ == '__main__':
-    socketio.run(app,port=PORT, host=serverIP, debug=True)
+    socketio.run(app,port=5000, host='0.0.0.0', debug=True)
     print('socket io start')
