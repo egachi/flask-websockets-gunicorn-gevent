@@ -7,7 +7,7 @@
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function() {
 
-            var socket = io('https://edisga-python-websockets-linux.azurewebsites.net/test');
+            var socket = io('/test');
 
             socket.on('connect', function() {
                 socket.emit('my_event', {data: 'connected to the SocketServer...'});

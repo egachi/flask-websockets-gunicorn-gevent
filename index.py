@@ -5,8 +5,7 @@ import os
 async_mode = None
 app = Flask(__name__)
  
-socketio = SocketIO(app, async_mode=async_mode)
-socketio.init_app(app, cors_allowed_origins="*")
+socketio = SocketIO(app, async_mode=async_mode, cors_allowed_origins="*")
 thread = None
 thread_lock = Lock()
  
