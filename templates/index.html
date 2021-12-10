@@ -6,12 +6,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function() {
- 
-            namespace = '/test';
-            var socket = io('https://edisga-python-websockets-linux.azurewebsites.net');
- 
-            socket.of(namespace)
-            .on('connect', function() {
+
+            var socket = io('https://edisga-python-websockets-linux.azurewebsites.net/test');
+
+            socket.on('connect', function() {
                 socket.emit('my_event', {data: 'connected to the SocketServer...'});
             });
  
