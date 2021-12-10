@@ -8,7 +8,7 @@
         $(document).ready(function() {
  
             namespace = '/test';
-            var socket = io(namespace);
+            var socket = io('https://edisga-python-websockets-linux.azurewebsites.net/test');
  
             socket.on('connect', function() {
                 socket.emit('my_event', {data: 'connected to the SocketServer...'});
