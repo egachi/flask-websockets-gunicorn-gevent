@@ -3,7 +3,7 @@ from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'notverysecret!'
-socketio = SocketIO(app)
+socketio = SocketIO(app,cors_allowed_origins='*')
 
 @app.route("/")
 def hello():
