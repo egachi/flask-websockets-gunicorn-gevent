@@ -1,13 +1,12 @@
+from gevent import monkey
+monkey.patch_all()
+
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
-import eventlet
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'random!'
-socketio = SocketIO(app, async_mode="gevent",cors_allowed_origins="*")
-
-eventlet.monkey_patch()
-
+socketio = SocketIO(app, async_mode="gevent",cors_allowed_origins='*')
 
 @app.route("/")
 def home():
