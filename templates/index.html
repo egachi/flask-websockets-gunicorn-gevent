@@ -2,11 +2,11 @@
 <head>
     <title>PingPong</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function () {
             namespace = ''
-            var socket = io('https://edisga-python-websockets-linux.azurewebsites.net')
+            var socket = io()
             socket.on("server_to_client", function (msg) {
                 alert("message from server to client: " + msg.msg)
             })
