@@ -16,5 +16,5 @@ def client_to_server(msg):
     socketio.emit("server_to_client", {"msg": message})
 
 if __name__ == '__main__':
-    socketio.run(app,port=5000, host='0.0.0.0', debug=True)
+    socketio.run(app,port=8000, host='0.0.0.0', debug=True)
     print('socket io start')
