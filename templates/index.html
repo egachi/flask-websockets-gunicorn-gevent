@@ -6,7 +6,7 @@
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function () {
             namespace = ''
-            var socket = io('https://edisga-python-websockets-linux.azurewebsites.net/')
+            var socket = io('https://edisga-python-websockets-linux.azurewebsites.net')
             socket.on("server_to_client", function (msg) {
                 alert("message from server to client: " + msg.msg)
             })
